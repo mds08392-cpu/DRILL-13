@@ -22,4 +22,7 @@ class Ball:
             game_world.remove_object(self)
 
     def draw(self):
-        self.image.draw(self.x, self.y)
+        if self.size == 21:
+            self.small_image.draw(self.x, self.y, 21, 21)
+        else:
+            self.image.draw(self.x, self.y, 42, 42)
