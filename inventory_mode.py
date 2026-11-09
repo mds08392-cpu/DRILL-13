@@ -28,7 +28,13 @@ def render():
 
 
 def handle_events():
-    pass
+    for event in get_events():
+        if event.type == SDL_QUIT:
+            game_framework.quit()
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
+            game_framework.quit()
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_i:
+            game_framework.pop_mode()
 
 
 def pause():
